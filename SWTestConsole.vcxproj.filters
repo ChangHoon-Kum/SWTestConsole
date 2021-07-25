@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\LV1">
+      <UniqueIdentifier>{60d6c799-c999-4e92-9878-2d1e25327ef8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\LV2">
+      <UniqueIdentifier>{e3bfed7d-3314-41a4-aa86-2e953ad57d28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\LV3">
+      <UniqueIdentifier>{16678be4-74f9-41df-9c20-329674bfc2c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Test">
+      <UniqueIdentifier>{bea4c1a3-85ce-419d-8a7f-f1fa03ef83c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Lesson">
+      <UniqueIdentifier>{28cc7be6-a771-4b2f-937f-6473b2622701}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\LV4">
+      <UniqueIdentifier>{0d14b56b-0fd1-4105-a74d-3a4b9d273f3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\baekjoon">
+      <UniqueIdentifier>{3319582c-31f2-4635-842e-2f0bbc612969}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SWTestConsole.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CFibo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2071_mean.cpp">
+      <Filter>소스 파일\LV1</Filter>
+    </ClCompile>
+    <ClCompile Include="01milionair.cpp">
+      <Filter>소스 파일\LV2</Filter>
+    </ClCompile>
+    <ClCompile Include="2070_CompareNumber.cpp">
+      <Filter>소스 파일\LV1</Filter>
+    </ClCompile>
+    <ClCompile Include="2068_MaxVal.cpp">
+      <Filter>소스 파일\LV1</Filter>
+    </ClCompile>
+    <ClCompile Include="2063_midVal.cpp">
+      <Filter>소스 파일\LV1</Filter>
+    </ClCompile>
+    <ClCompile Include="2058_sumofciphers.cpp">
+      <Filter>소스 파일\LV1</Filter>
+    </ClCompile>
+    <ClCompile Include="2056_Calendar.cpp">
+      <Filter>소스 파일\LV1</Filter>
+    </ClCompile>
+    <ClCompile Include="2050_alphabet2num.cpp">
+      <Filter>소스 파일\LV1</Filter>
+    </ClCompile>
+    <ClCompile Include="2050_alphabet2num_map.cpp">
+      <Filter>소스 파일\LV1</Filter>
+    </ClCompile>
+    <ClCompile Include="2047_makeUpperCase.cpp">
+      <Filter>소스 파일\LV1</Filter>
+    </ClCompile>
+    <ClCompile Include="2046_char_for_test.cpp">
+      <Filter>소스 파일\LV1</Filter>
+    </ClCompile>
+    <ClCompile Include="12004_gogodan1.cpp">
+      <Filter>소스 파일\LV3</Filter>
+    </ClCompile>
+    <ClCompile Include="BabyGin_Bruteforce.cpp">
+      <Filter>소스 파일\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Balance_pt.cpp">
+      <Filter>소스 파일\Lesson</Filter>
+    </ClCompile>
+    <ClCompile Include="1249_path_bfs.cpp">
+      <Filter>소스 파일\LV4</Filter>
+    </ClCompile>
+    <ClCompile Include="1249_path_bfs_add_root.cpp">
+      <Filter>소스 파일\LV4</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_20057_basic.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CFibo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
