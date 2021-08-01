@@ -1,4 +1,4 @@
-Ôªø#include <iostream>
+#include <iostream>
 #include <cstdio> // should be annotation
 #include <stdio.h> // should be annotation
 
@@ -45,7 +45,7 @@ struct POINT
 	}
 };
 
-// Ï¢å, Ìïò, Ïö∞, ÏÉÅ
+// ¡¬, «œ, øÏ, ªÛ
 int dx[4] = { -1,0,1, };
 int dy[4] = { 0,1,0,-1 };
 
@@ -59,7 +59,7 @@ vector<int> vcCntEmpty;
 
 bool isCorrectPos(int j, int i, int N, int M)
 {
-	return j >= 0 && i >= 0 && j < N && i < M;
+	return j >= 0 && i >= 0 && j < N&& i < M;
 }
 
 void Infection()
@@ -71,13 +71,13 @@ void Infection()
 	vector<POINT> vcVirus_pre;
 
 	int idx, dir;
-	do 
+	do
 	{
 		vcVirus_pre = vcVirus;
 		int szVirus = vcVirus_pre.size();
-		for (idx = 0 ; idx < szVirus ; idx++)
+		for (idx = 0; idx < szVirus; idx++)
 		{
-			for (dir = 0 ; dir < 4 ; dir++)
+			for (dir = 0; dir < 4; dir++)
 			{
 				POINT pt = vcVirus_pre.at(idx);
 				pt.x += dx[dir];
@@ -103,7 +103,7 @@ void CheckEmpty()
 	const int _M = vcRoom_Buf.at(0).size();
 
 	int szWallSel = vcWallSel.size();
-	for (int idx = 0; idx < szWallSel ; idx++)
+	for (int idx = 0; idx < szWallSel; idx++)
 	{
 		POINT ptMakeWall = vcWallSel.at(idx);
 		vcRoom_Buf.at(ptMakeWall.y).at(ptMakeWall.x) = 1;
@@ -112,9 +112,9 @@ void CheckEmpty()
 	Infection();
 
 	int nCount = 0;
-	for (int j = 0 ; j < _N ; j++)
+	for (int j = 0; j < _N; j++)
 	{
-		for (int i = 0 ; i < _M ; i++)
+		for (int i = 0; i < _M; i++)
 		{
 			if (vcRoom_Buf.at(j).at(i) == 0)
 			{
@@ -154,15 +154,15 @@ int main(int argc, char** argv)
 	int j = 0, i = 0;
 	int N = 0, M = 0;
 	cin >> N >> M;
-	vcRoom_Init.resize(N); // ÏÑ∏Î°ú
-	for (idx = 0 ; idx < N ; idx++)
+	vcRoom_Init.resize(N); // ºº∑Œ
+	for (idx = 0; idx < N; idx++)
 	{
-		vcRoom_Init.at(idx).resize(M); // Í∞ÄÎ°ú
+		vcRoom_Init.at(idx).resize(M); // ∞°∑Œ
 	}
 
-	for (j = 0 ;  j < N ; j++)
+	for (j = 0; j < N; j++)
 	{
-		for (i = 0 ; i <  M ; i++)
+		for (i = 0; i < M; i++)
 		{
 			cin >> vcRoom_Init.at(j).at(i);
 			if (vcRoom_Init.at(j).at(i) == 0)
@@ -175,12 +175,12 @@ int main(int argc, char** argv)
 			}
 		}
 	}
-	
+
 	Sel3Walls(vcEmpty);
 
 	int nMaxEmpty = *max_element(vcCntEmpty.begin(), vcCntEmpty.end());
-	
+
 	cout << nMaxEmpty << endl;
-	
-	return 0;//Ï†ïÏÉÅÏ¢ÖÎ£åÏãú Î∞òÎìúÏãú 0ÏùÑ Î¶¨ÌÑ¥Ìï¥ÏïºÌï©ÎãàÎã§.
+
+	return 0;//¡§ªÛ¡æ∑·Ω√ π›µÂΩ√ 0¿ª ∏Æ≈œ«ÿæﬂ«’¥œ¥Ÿ.
 }

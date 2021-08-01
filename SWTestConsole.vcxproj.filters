@@ -93,6 +93,18 @@
     <ClCompile Include="bj_20057_basic.cpp">
       <Filter>소스 파일\baekjoon</Filter>
     </ClCompile>
+    <ClCompile Include="bj_19236_dfs.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_21610_cloud and water.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_20055_conveyor.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_14502_virus.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CFibo.h">
