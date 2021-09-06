@@ -1,4 +1,4 @@
-ï»¿#include <iostream>
+#include <iostream>
 #include <cstdio> // should be annotation
 #include <stdio.h> // should be annotation
 
@@ -22,11 +22,11 @@ using namespace std;
 
 enum DIRECTION { LEFT = 0, BOTTOM, RIGHT, TOP, DIRMAX = 4 };
 
-// ì¢Œ, í•˜, ìš°, ìƒ
+// ÁÂ, ÇÏ, ¿ì, »ó
 int dx[4] = { -1,0,1, 0 };
-int dy[4] = {  0,1,0,-1 };
+int dy[4] = { 0,1,0,-1 };
 
-int N, M;  // N - ê²©ìž í¬ê¸°, M - ìƒ‰ìƒì˜ ê°¯ìˆ˜
+int N, M;  // N - °ÝÀÚ Å©±â, M - »ö»óÀÇ °¹¼ö
 
 struct POINT
 {
@@ -82,7 +82,7 @@ struct BALL
 	void Move(const DIRECTION& dir)
 	{
 		POINT nxtPos(pos.x + dx[dir], pos.y + dy[dir]);
-		while (nxtPos.isValidPoint() 
+		while (nxtPos.isValidPoint()
 			&& A[nxtPos.y][nxtPos.x] != '#')
 		{
 			pos = nxtPos;
@@ -156,7 +156,7 @@ void run(int _depth, DIRECTION _dir, BALL _r, BALL _b)
 
 		if (_r.bExit && !_b.bExit)
 		{
-			nTurn = min(_depth+1, nTurn);
+			nTurn = min(_depth + 1, nTurn);
 			return;
 		}
 		else if (_b.bExit)
@@ -218,9 +218,9 @@ int main(int argc, char** argv)
 	cin >> N >> M;
 
 	char chTmp;
-	for (int j = 0 ; j < N ; j++)
+	for (int j = 0; j < N; j++)
 	{
-		for (int i = 0 ; i < M ; i++)
+		for (int i = 0; i < M; i++)
 		{
 			cin >> chTmp;
 
@@ -243,15 +243,15 @@ int main(int argc, char** argv)
 		}
 	}
 
-	for (int dir = 0 ; dir < DIRMAX ; dir++)
+	for (int dir = 0; dir < DIRMAX; dir++)
 	{
 		run(0, (DIRECTION)dir, m_Red, m_Blue);
 	}
-	
+
 	if (nTurn > TURN_END)
 		nTurn = -1;
 
 	cout << nTurn << endl;
 
-	return 0;//ì •ìƒì¢…ë£Œì‹œ ë°˜ë“œì‹œ 0ì„ ë¦¬í„´í•´ì•¼í•©ë‹ˆë‹¤.
+	return 0;//Á¤»óÁ¾·á½Ã ¹Ýµå½Ã 0À» ¸®ÅÏÇØ¾ßÇÕ´Ï´Ù.
 }

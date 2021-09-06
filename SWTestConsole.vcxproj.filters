@@ -105,6 +105,93 @@
     <ClCompile Include="bj_14502_virus.cpp">
       <Filter>소스 파일\baekjoon</Filter>
     </ClCompile>
+    <ClCompile Include="bj_17779_gerrymandering2.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_17144_air circulator simul.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_12100_2048_easy.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_14891_wheel.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_14888_Operater.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_14889_bruteforce(timeover).cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_15686_chickenDistance(timeover).cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_15686_chickendistance(pass, combination).cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_14889_combination(pass).cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_21608_SharkElementarySchool.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_14501_comb(pass).cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_16236_babyshark%28fail%29.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_17140_2dimArray (fail).cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_20058_firestorm_bfs.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_16234_MovePopulation_bfs.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_20056_fireball(bad alloc fail).cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_3190_snake.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_17837_newChessGame_simulation.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_15683_CCTV_recursive.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_5373_cube%28uncomplete%29.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_19238_StartTaxi_bfs.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_16235_tree(timeover).cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_16235_tree(pass)_ vector swap.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_15684_ladder_dfs.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_20056_fireball_vector swap.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_19237_adult_shark(vector swap).cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_21609_shark_middle_school_bfs.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_21611_shark_blizzard.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_13460_ball_escape(fail)_unknown reason.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CFibo.h">

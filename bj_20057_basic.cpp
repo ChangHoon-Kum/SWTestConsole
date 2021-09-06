@@ -38,7 +38,7 @@ vector<vector<int>> vcMap;
 
 
 // аб, го, ©Л, ╩С
-int dx[4] = { -1,0,1, };
+int dx[4] = { -1,0,1, 0 };
 int dy[4] = { 0,1,0,-1 };
 
 double dProbKernel[4][5][5] =
