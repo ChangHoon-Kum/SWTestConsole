@@ -38,10 +38,11 @@ struct POINT
 {
 	int x;
 	int y;
+	int id;
 
 	POINT()
 	{
-		x = y = INT_MAX;
+		x = y = id = INT_MAX;
 	}
 
 	POINT(int _x, int _y)
@@ -115,7 +116,15 @@ void unionParent(int a, int b)
 	else parent[a] = b;
 }
 
-POINT Nodes[ARRAY_MAX];
+bool cmp_x(POINT& p1, POINT& p2)
+{
+	return p1.x < p2.x;
+}
+
+bool cmp_y(POINT& p1, POINT& p2)
+{
+	return p1.y < p2.y;
+}
 
 int main(void)
 {
@@ -130,31 +139,27 @@ int main(void)
 	{
 		cin >> N;
 		
-		//vector<POINT> vcNode;
+		vector<POINT> vcNode;
+		vcNode.resize(N);
+
 		//vector<EDGE> vcEdge;
 		priority_queue<tuple<int/*cost*/, int/*node1*/, int/*node2*/>> pqEdge;
-		POINT tmpPt;
 		for (int n = 0 ; n < N ; n++)
 		{
-			cin >> tmpPt.x >> tmpPt.y;
+			cin >> vcNode[n].x >> vcNode[n].y;
+			parent[n] = vcNode[n].id = n;
+		}
 
-			if (n == 0)
-			{
-				//vcNode.push_back(tmpPt);
-				Nodes[n] = tmpPt;
-				continue;
-			}
-			
-			for (int node = 0 ; node < n ; node++)
-			{
-				//vcEdge.push_back(EDGE(node, n, GetCost(vcNode.at(node), tmpPt)));
-				pqEdge.push(make_tuple(-GetCost(Nodes[node], tmpPt), node, n));
-			}
+		sort(vcNode.begin(), vcNode.end(), cmp_x);
+		for (int x = 1; x < N ; x++)
+		{
+			pqEdge.push(make_tuple(-GetCost(vcNode[x], vcNode[x-1]), min(vcNode[x - 1].id, vcNode[x].id), max(vcNode[x - 1].id, vcNode[x].id)));
+		}
 
-			//vcNode.push_back(tmpPt);
-			Nodes[n] = tmpPt;
-
-			parent[n] = n;
+		sort(vcNode.begin(), vcNode.end(), cmp_y);
+		for (int y = 1; y < N; y++)
+		{
+			pqEdge.push(make_tuple(-GetCost(vcNode[y], vcNode[y - 1]), min(vcNode[y - 1].id, vcNode[y].id), max(vcNode[y - 1].id, vcNode[y].id)));
 		}
 
 		int cost = 0;

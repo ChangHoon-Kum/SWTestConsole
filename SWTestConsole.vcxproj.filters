@@ -210,9 +210,6 @@
     <ClCompile Include="Prob1_Sol_Permutation_SegmentTree_Map.cpp">
       <Filter>소스 파일\Pro</Filter>
     </ClCompile>
-    <ClCompile Include="MST.cpp">
-      <Filter>소스 파일\Pro</Filter>
-    </ClCompile>
     <ClCompile Include="MST_rev1.cpp">
       <Filter>소스 파일\Pro</Filter>
     </ClCompile>
@@ -253,6 +250,21 @@
       <Filter>소스 파일\Test</Filter>
     </ClCompile>
     <ClCompile Include="Prob4_MostFreqNum.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="lis.cpp">
+      <Filter>소스 파일\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_12738_lis.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_16474_sort_lis.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="Prob3_Sol_MST.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="Prob6_Candy.cpp">
       <Filter>소스 파일\Pro</Filter>
     </ClCompile>
   </ItemGroup>
