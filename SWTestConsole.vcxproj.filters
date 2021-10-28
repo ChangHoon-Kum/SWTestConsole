@@ -34,6 +34,9 @@
     <Filter Include="소스 파일\baekjoon">
       <UniqueIdentifier>{3319582c-31f2-4635-842e-2f0bbc612969}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Pro">
+      <UniqueIdentifier>{ca4a9313-3869-46d1-bb5a-245dbce7659b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SWTestConsole.cpp">
@@ -191,6 +194,66 @@
     </ClCompile>
     <ClCompile Include="bj_13460_ball_escape(fail)_unknown reason.cpp">
       <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bitwise test.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Permutation_TwoPointer.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="Permutation_SegmentTree.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="SteppingStones_SegmentTree.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="Prob1_Sol_Permutation_SegmentTree_Map.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="MST.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="MST_rev1.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="DP_Tiling.cpp">
+      <Filter>소스 파일\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="SteppingStones_Hint.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="kadane_BF.cpp">
+      <Filter>소스 파일\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Prob2_Sol_SteppingStones.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="Prob5_Sol_MaximumPartialSumation.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_1912_Kadane.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="Prob7_SOl_Cake.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="Prob9_Sol_Delivery.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="MostFreq1.cpp">
+      <Filter>소스 파일\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="MostFreq2_Hint.cpp">
+      <Filter>소스 파일\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="MostFreq2_rev0.cpp">
+      <Filter>소스 파일\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="MostFreq2_rev1.cpp">
+      <Filter>소스 파일\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Prob4_MostFreqNum.cpp">
+      <Filter>소스 파일\Pro</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

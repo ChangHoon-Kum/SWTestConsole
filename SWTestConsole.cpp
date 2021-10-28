@@ -11,247 +11,111 @@
 #include <queue>
 #include <list>
 
+#include <bitset>
+#include <thread>
+#include <mutex>
+#include <stack>
+#include <string>
+
 using namespace std;
+int cur;
+stack<int> st;
 
-#define abs(n) (n>0?n:-n)
-#define min(a,b) (a<b?a:b)
-#define max(a,b) (a>b?a:b)
-
-#define ARR_LIMIT	10
-
-
-enum DIRECTION { LEFT = 0, BOTTOM, RIGHT, TOP, DIRMAX = 4 };
-
-// 좌, 하, 우, 상
-int dx[4] = { -1,0,1, 0 };
-int dy[4] = {  0,1,0,-1 };
-
-int N, M;  // N - 격자 크기, M - 색상의 갯수
-
-struct POINT
-{
-	int x;
-	int y;
-
-	POINT()
-	{
-		x = y = -1;
-	}
-
-	POINT(int _x, int _y)
-	{
-		this->x = _x;
-		this->y = _y;
-	}
-
-	string GetString()
-	{
-		char buffer[100];
-		snprintf(buffer, 100, "(%d, %d) ", x, y);
-		return string(buffer);
-	}
-
-	bool isValidPoint()
-	{
-		return x >= 0 && y >= 0 && x < M&& y < N;
-	}
-
-	bool operator==(const POINT& _r)
-	{
-		return this->x == _r.x && this->y == _r.y;
-	}
-
-	bool operator!=(const POINT& _r)
-	{
-		return this->x != _r.x && this->y != _r.y;
-	}
+// 연결 리스트 node
+struct Node {
+	int num;
+	Node* prev;
+	Node* next;
+	Node(int num) :num(num), prev(NULL), next(NULL) {};
 };
 
-char A[ARR_LIMIT][ARR_LIMIT] = { ' ', };
+vector<Node*> v;
 
-struct BALL
-{
-	POINT pos;
-	bool bExit;
+void solve(vector<string>& cmd) {
+	for (string s : cmd) {
+		if (s[0] == 'D' || s[0] == 'U') {
+			int x = stoi(s.substr(2));
+			if (s[0] == 'D') while (x--) cur = v[cur]->next->num;
+			else while (x--) cur = v[cur]->prev->num;
+		}
+		else if (s[0] == 'C') {
+			st.push(cur);
+			if (v[cur]->prev != NULL)
+				v[cur]->prev->next = v[cur]->next;
+			if (v[cur]->next != NULL) {
+				v[cur]->next->prev = v[cur]->prev;
+				cur = v[cur]->next->num;
+			}
+			else cur = v[cur]->prev->num;
+		}
+		else if (s[0] == 'Z') {
+			int r = st.top(); st.pop();
+			if (v[r]->prev != NULL)
+				v[r]->prev->next = v[r];
+			if (v[r]->next != NULL)
+				v[r]->next->prev = v[r];
+		}
+		else return; //oops
+	}
+}
 
-	BALL()
-	{
-		bExit = false;
+string solution(int n, int k, vector<string> cmd) {
+	string answer(n, 'X');
+
+	// 연결리스트 생성 및 연결
+	v.resize(n);// = vector<Node*>(n);
+
+	for (int i = 0; i < n; i++)
+		v[i] = new Node(i);
+
+	v[0]->next = v[1];
+	v[n - 1]->prev = v[n - 2];
+
+	for (int i = 1; i < n - 1; i++) {
+		v[i]->next = v[i + 1];
+		v[i]->prev = v[i - 1];
 	}
 
-	void Move(const DIRECTION& dir)
-	{
-		POINT nxtPos(pos.x + dx[dir], pos.y + dy[dir]);
-		while (nxtPos.isValidPoint() 
-			&& A[nxtPos.y][nxtPos.x] != '#')
-		{
-			pos = nxtPos;
-			if (A[nxtPos.y][nxtPos.x] == 'O')
-			{
-				bExit = true;
-				break;
-			}
+	// cmd 수행
+	cur = k;
+	solve(cmd);
 
-			nxtPos.x += dx[dir];
-			nxtPos.y += dy[dir];
-		}
+	// 삭제 여부 체크
+	int leftCheck, rightCheck;
+	leftCheck = rightCheck = cur;
+
+	answer[cur] = 'O';
+
+	// 현재 커서 기준 왼쪽 체크
+	while (v[leftCheck]->prev != NULL) {
+		leftCheck = v[leftCheck]->prev->num;
+		answer[leftCheck] = 'O';
 	}
-};
 
-#define TURN_END 10
-int nTurn = TURN_END;
-BALL m_Red, m_Blue;
-
-void run(int _depth, DIRECTION _dir, BALL _r, BALL _b)
-{
-	if (_depth >= TURN_END)
-	{
-		return;
+	// 현재 커서 기준 오른쪽 체크
+	while (v[rightCheck]->next != NULL) {
+		rightCheck = v[rightCheck]->next->num;
+		answer[rightCheck] = 'O';
 	}
-	else
-	{
-		POINT ptRPrev = _r.pos;
-		POINT ptBPrev = _b.pos;
-		_r.Move(_dir);
-		_b.Move(_dir);
 
-		if (_r.pos == ptRPrev && _b.pos == ptBPrev)
-		{
-			return;
-		}
-
-		if (_r.pos == _b.pos)
-		{
-			DIRECTION sub_dir;
-			switch (_dir)
-			{
-			case LEFT:
-				sub_dir = RIGHT;
-				break;
-			case BOTTOM:
-				sub_dir = TOP;
-				break;
-			case RIGHT:
-				sub_dir = LEFT;
-				break;
-			case TOP:
-			default:
-				sub_dir = BOTTOM;
-				break;
-			}
-			int distR = abs((_r.pos.x - ptRPrev.x)) + abs((_r.pos.y - ptRPrev.y));
-			int distB = abs((_b.pos.x - ptBPrev.x)) + abs((_b.pos.y - ptBPrev.y));
-
-			if (distB > distR)
-			{
-				_b.pos.x += dx[sub_dir];
-				_b.pos.y += dy[sub_dir];
-			}
-			else
-			{
-				_r.pos.x += dx[sub_dir];
-				_r.pos.y += dy[sub_dir];
-			}
-		}
-
-		if (_r.bExit && !_b.bExit)
-		{
-			nTurn = min(_depth+1, nTurn);
-			return;
-		}
-		else if (_b.bExit)
-		{
-			return;
-		}
-		else
-		{
-			vector<DIRECTION> vcNxtDir;
-			switch (_dir)
-			{
-			case LEFT:
-				vcNxtDir.push_back(TOP);
-				vcNxtDir.push_back(BOTTOM);
-				if (_depth == 0)
-				{
-					vcNxtDir.push_back(RIGHT);
-				}
-				break;
-			case BOTTOM:
-				vcNxtDir.push_back(LEFT);
-				vcNxtDir.push_back(RIGHT);
-				if (_depth == 0)
-				{
-					vcNxtDir.push_back(TOP);
-				}
-				break;
-			case RIGHT:
-				vcNxtDir.push_back(TOP);
-				vcNxtDir.push_back(BOTTOM);
-				if (_depth == 0)
-				{
-					vcNxtDir.push_back(LEFT);
-				}
-				break;
-			case TOP:
-			default:
-				vcNxtDir.push_back(LEFT);
-				vcNxtDir.push_back(RIGHT);
-				if (_depth == 0)
-				{
-					vcNxtDir.push_back(BOTTOM);
-				}
-				break;
-			}
-
-			for (auto it : vcNxtDir)
-			{
-				run(_depth + 1, it, _r, _b);
-			}
-		}
-	}
+	return answer;
 }
 
 int main(int argc, char** argv)
 {
-	freopen("input.txt", "r", stdin);
-
-	cin >> N >> M;
-
-	char chTmp;
-	for (int j = 0 ; j < N ; j++)
-	{
-		for (int i = 0 ; i < M ; i++)
-		{
-			cin >> chTmp;
-
-			if (chTmp == 'R')
-			{
-				m_Red.pos.x = i;
-				m_Red.pos.y = j;
-				A[j][i] = '.';
-			}
-			else if (chTmp == 'B')
-			{
-				m_Blue.pos.x = i;
-				m_Blue.pos.y = j;
-				A[j][i] = '.';
-			}
-			else
-			{
-				A[j][i] = chTmp;
-			}
-		}
-	}
-
-	for (int dir = 0 ; dir < DIRMAX ; dir++)
-	{
-		run(0, (DIRECTION)dir, m_Red, m_Blue);
-	}
+	vector<string> cmd;
 	
-	if (nTurn > TURN_END)
-		nTurn = -1;
+	cmd.push_back("D 2");
+	cmd.push_back("C");
+	cmd.push_back("U 3");
+	cmd.push_back("C");
+	cmd.push_back("D 4");
+	cmd.push_back("C");
+	cmd.push_back("U 2");
+	cmd.push_back("Z");
+	cmd.push_back("Z");
 
-	cout << nTurn << endl;
+	cout << solution(8,2,cmd);
 
 	return 0;//정상종료시 반드시 0을 리턴해야합니다.
 }
