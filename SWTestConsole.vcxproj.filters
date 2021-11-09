@@ -267,6 +267,66 @@
     <ClCompile Include="Prob6_Candy.cpp">
       <Filter>소스 파일\Pro</Filter>
     </ClCompile>
+    <ClCompile Include="bj_5676_segTree.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="Prob10_Sol_CardGame.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_1162_Road.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_2170.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_5419_NorthWesternWind.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_11659_RangeSum.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_2042.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_11505.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_2357.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_1517.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_9345.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_16975.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_11053_12105_12738_lis.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_14002_lis.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_14002_lis_hint.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_1238_dijkstra_longest.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="Prob11_Sol_product.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_17131_fox_star.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="Prob12_Sol_dotconnection.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_10217_travel.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CFibo.h">
