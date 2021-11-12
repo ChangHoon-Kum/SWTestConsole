@@ -47,15 +47,17 @@ void dijkstra(int start)
 			int dest, cost, time;
 			tie(dest, cost, time) = node;
 
-			
+			int nextTime = d[cur][cur_cost] + time;
+			int nextCost = cur_cost + cost;
+			if (nextTime < d[dest][nextCost] && nextCost <= M)
 			{
-				int nextTime = d[cur][cur_cost] + time;
-				int nextCost = cur_cost + cost;
-				if (nextTime < d[dest][nextCost] && nextCost <= M)
+				for (int j = nextCost; j <= M; j++)
 				{
-					d[dest][nextCost] = nextTime;
-					pq.emplace(nextTime, nextCost, dest);
+					if (d[dest][j] <= nextTime) break;
+					d[dest][j] = nextTime;
 				}
+				
+				pq.emplace(nextTime, nextCost, dest);
 			}
 
 		}

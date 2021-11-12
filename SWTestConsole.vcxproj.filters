@@ -37,6 +37,9 @@
     <Filter Include="소스 파일\Pro">
       <UniqueIdentifier>{ca4a9313-3869-46d1-bb5a-245dbce7659b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\programmers">
+      <UniqueIdentifier>{771230c2-e077-4e33-b01f-0fa310ef608b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SWTestConsole.cpp">
@@ -325,6 +328,42 @@
       <Filter>소스 파일\Pro</Filter>
     </ClCompile>
     <ClCompile Include="bj_10217_travel.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_1450_knapsack.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_12865_knapsack(1).cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_12920_knapsack.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_10211_Maximum subarray.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="notepad.cpp">
+      <Filter>소스 파일\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_1753_dijkstra.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="immigration.cpp">
+      <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="Prob13_Sol_Server.cpp">
+      <Filter>소스 파일\Pro</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_1920_binarysearch.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_10816_lower_bound.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_18870.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
+    <ClCompile Include="bj_12865_knapsack(2).cpp">
       <Filter>소스 파일\baekjoon</Filter>
     </ClCompile>
   </ItemGroup>
